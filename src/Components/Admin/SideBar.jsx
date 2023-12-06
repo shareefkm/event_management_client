@@ -5,17 +5,20 @@ import { BiBarChartSquare } from 'react-icons/bi'
 import { FaRegCalendarCheck } from "react-icons/fa";
 import { CiLogout } from "react-icons/ci";
 import AddEvents from "./AddEvents";
+import { useDispatch } from "react-redux";
+import { adminLogout } from "../../Redex/Auth/AdminSlice";
 
 function SideBar() {
   const [open, setOpen] = useState(true);
   const [isModalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const Menus = [
     { title: "Dashboard", src: <BiBarChartSquare />, path: () => navigate('/admin') },
     { title: "Users", src: <PiUserSquare />, path: () => navigate('/admin'), gap: true },
     { title: "Add Events", src: <FaRegCalendarCheck />, onClick: () => setModalOpen(true) },
-    { title: "Logout", src: <CiLogout />, path: () => navigate('/admin/logout') },
+    { title: "Logout", src: <CiLogout />, onClick: ()=> dispatch(adminLogout()) },
   ];
 
   const handleToggle = () => {
