@@ -6,6 +6,7 @@ import Tables from './Tables';
 function AdminHome() {
     const admin = useSelector((state) => state.admin);
   return (
+    <div>
     <div className="md:flex">
         <div>
           <SideBar/>
@@ -13,6 +14,7 @@ function AdminHome() {
         <div className='pl-5 md:w-full'>
         <Tables path={'/getusers'} action={'/userstatus'}/>
         </div>
+      </div>
       </div>
   )
 }

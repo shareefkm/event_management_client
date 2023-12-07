@@ -10,7 +10,6 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const widthSize = useSize();
   const { token, user } = useSelector((state) => state.user);
-  console.log(token);
   const toggleSidebar = () => {
     setIsOpen(true);
   };

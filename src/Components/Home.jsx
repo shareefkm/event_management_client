@@ -10,7 +10,7 @@ function Home() {
   return (
     <div className="bg-gray-100" >
             <Sidebar />
-            <div className="flex  md:ml-72  lg:ml-72 ">
+            <div className="md:flex  md:ml-72  lg:ml-72 ">
                 <Events />
             </div>   
              
